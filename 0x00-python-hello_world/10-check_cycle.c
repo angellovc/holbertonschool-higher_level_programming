@@ -11,11 +11,9 @@ int check_cycle(listint_t *list)
 
 	bunny = list;
 	turtle = list;
-	while(bunny || turtle || turtle->next)
+	while(turtle && bunny && bunny->next)
 	{
 		turtle = turtle->next;
-		if (bunny->next->next == '\0')
-			return (0);
 		bunny = bunny->next->next;
 		if (bunny == turtle)
 			return (1);
