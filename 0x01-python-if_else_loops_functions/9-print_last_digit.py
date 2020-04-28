@@ -2,7 +2,7 @@
 
 
 def print_last_digit(number):
-    if number < 0: #
+    if number < 0:
         lastdigit = -1 * (abs(number) % 10)  # get las digit in negative number
     else:  # last digit integer number
         lastdigit = number % 10
