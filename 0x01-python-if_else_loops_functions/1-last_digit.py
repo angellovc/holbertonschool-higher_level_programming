@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import random
-""" this script check the last digit of a random number """
 number = random.randint(-10000, 10000)  # random number
+""" this script check the last digit of a random number """
 if number < 0:  # get the las digit in negative numbers
     lastdigit = -1 * (abs(number) % 10)
 else:  # get the last digit
