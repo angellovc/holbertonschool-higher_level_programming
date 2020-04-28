@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 import random
-
 """ this script check the last digit of a random number """
 number = random.randint(-10000, 10000)  # random number
 if number < 0:  # get the las digit in negative numbers
     lastdigit = -1 * (abs(number) % 10)
 else:  # get the last digit
     lastdigit = number % 10
-if lastdigit > 5:
+if lastdigit >= 6:
     print("Last digit of {:d} is {:d}\
  and is greater than 5".format(number, lastdigit))
 elif lastdigit == 0:
