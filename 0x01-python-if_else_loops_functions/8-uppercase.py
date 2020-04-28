@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" conver a string lower characters into a upper """
 
 
 def uppercase(str):
