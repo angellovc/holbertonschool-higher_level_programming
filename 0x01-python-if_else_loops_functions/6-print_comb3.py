@@ -1,12 +1,8 @@
 #!/usr/bin/python3
-count = 0
-collector = 2
-while (count < 100):
-    if count < 89:
-        print("{:0>2}, ".format(count), end='')
-    else:
-        print("{:0>2}".format(count))
-    if count % 10 == 9:
-        count = count + collector
-        collector = collector + 1
-    count = count + 1
+
+for tens in range (0, 10):
+    for units in range (tens + 1, 10):
+        if units == 9 and tens == 8:
+            print("{}{}".format(tens, units))
+        else:
+            print("{}{}, ".format(tens, units), end='')
