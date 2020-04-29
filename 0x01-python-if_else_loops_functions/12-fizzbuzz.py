@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 
 
-""" change multiples of three and five for Fizz and Buzz """
-
-
 def fizzbuzz():
+    """ change multiples of three and five for Fizz and Buzz """
     for number in range(1, 101):
         if number % 3 == 0 and number % 5 == 0:
             number = "FizzBuzz"
@@ -14,5 +12,3 @@ def fizzbuzz():
             number = "Buzz"
         print("{}".format(number), end=' ')
     print('')
-
-fizzbuzz()
