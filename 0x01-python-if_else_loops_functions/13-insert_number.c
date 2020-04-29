@@ -13,7 +13,7 @@ listint_t *insert_node(listint_t **head, int number)
 	head[1] = head[0];
 	while (head[1] != '\0')
 	{
-		if (number <= head[1]->n || head[1]->next == '\0')
+		if (head[1]->next == '\0' || number <= head[1]->next->n)
 		{
 			new = malloc(sizeof(listint_t));
 			if (new == '\0')
