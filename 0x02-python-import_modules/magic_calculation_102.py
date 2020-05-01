@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-a = 1
-b = 0
+
 
 def sub(a, b):
     """My subtraction function
@@ -13,6 +12,7 @@ def sub(a, b):
         The return value. a - b
     """
     return (a - b)
+
 
 def add(a, b):
     """My addition function
