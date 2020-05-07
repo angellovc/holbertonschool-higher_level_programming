@@ -2,6 +2,7 @@
 
 
 def roman_to_int(roman_string):
+    result = 0
     decimal = []
     Roman = {
         'I': 1,
@@ -13,9 +14,11 @@ def roman_to_int(roman_string):
         'M': 1000}
     for digit in roman_string:
         decimal.append(Roman[digit])
-    maxnum = decimal.index(max(decimal))
-    n1 = decimal[maxnum:]
-    n2 = decimal[0:maxnum]
-    number = sum(n1)
-    number2 = sum(n2)
-    return number - number2
+        decimal.append(0)
+    for i in range(0, len(decimal)):
+        if i < len(decimal) - 1:
+            if decimal[i] < decimal[i + 1]:
+                result -= decimal[i]
+            else:
+                result += decimal[i]
+    return result
