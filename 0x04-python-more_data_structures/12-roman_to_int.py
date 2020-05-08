@@ -2,7 +2,10 @@
 
 
 def roman_to_int(roman_string):
+    if roman_string is None or type(roman_string) != str:
+        return 0
     result = 0
+    numbers = list()
     decimal = []
     Roman = {
         'I': 1,
@@ -14,11 +17,11 @@ def roman_to_int(roman_string):
         'M': 1000}
     for digit in roman_string:
         decimal.append(Roman[digit])
-        decimal.append(0)
-    for i in range(0, len(decimal)):
-        if i < len(decimal) - 1:
-            if decimal[i] < decimal[i + 1]:
-                result -= decimal[i]
-            else:
-                result += decimal[i]
+    decimal.append(0)
+    decimal.append(0)
+    for i in range(1, len(decimal)):
+        if decimal[i - 1] < decimal[i]:
+            result -= decimal[i - 1]
+        else:
+            result += decimal[i - 1]
     return result
