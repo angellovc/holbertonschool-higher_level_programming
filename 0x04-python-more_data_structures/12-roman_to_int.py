@@ -15,13 +15,13 @@ def roman_to_int(roman_string):
         'C': 100,
         'D': 500,
         'M': 1000}
-    for digit in roman_string:
+    for digit in roman_string:  # translate roman to decimal
         decimal.append(Roman[digit])
     decimal.append(0)
-    decimal.append(0)
-    for i in range(1, len(decimal)):
-        if decimal[i - 1] < decimal[i]:
-            result -= decimal[i - 1]
+    for position in range(1, len(decimal)):
+        # add numbers if the right number is bigger than actual
+        if decimal[position - 1] < decimal[position]:
+            result -= decimal[position - 1]
         else:
-            result += decimal[i - 1]
+            result += decimal[position - 1]
     return result
