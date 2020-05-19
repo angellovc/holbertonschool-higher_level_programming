@@ -2,5 +2,5 @@
 
 
 class Square:
-    """ square class """
+    """ Square class """
     pass
