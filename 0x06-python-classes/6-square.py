@@ -53,7 +53,7 @@ positive integers")
         if len(position) != 2:
                 raise TypeError("position must be a tuple of 2 \
 positive integers")
-        return self.__position
+        self.__position = value
 
     @property
     def size(self):
