@@ -32,6 +32,9 @@ class Square:
             for left_space in range(0, self.__position[0]):
                 print(" ", end="")
             print("#" * self.__size, end="")
+            if self.__position[1] <= 0:
+                for right_space in range(self.position[1], 0, 1):
+                    print(" ", end="")
         print("")
 
     @property
