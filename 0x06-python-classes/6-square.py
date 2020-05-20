@@ -32,7 +32,9 @@ positive integers")
     def my_print(self):
         if self.__size != 0:
             for new_line in range(0, self.__position[1]):
-                        print("")
+                if self.position[0] > 0:
+                    print(" ", end="")
+                print("")
             for i in range(0, self.__size):
                 if i != 0:
                     print("")
