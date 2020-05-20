@@ -33,7 +33,7 @@ positive integers")
         if self.__size != 0:
             for new_line in range(0, self.__position[1]):
                 if self.position[0] > 0:
-                    print(" ", end="")
+                    print(" " * self.position[0], end="")
                 print("")
             for i in range(0, self.__size):
                 if i != 0:
