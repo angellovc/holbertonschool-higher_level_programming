@@ -47,6 +47,12 @@ positive integers")
 
     @position.setter
     def position(self, value):
+        if type(position) != tuple:
+                raise TypeError("position must be a tuple of 2 \
+positive integers")
+        if len(position) != 2:
+                raise TypeError("position must be a tuple of 2 \
+positive integers")
         return self.__position
 
     @property
