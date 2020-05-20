@@ -26,15 +26,15 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        for i in range(0, self.__size):
-            if i != 0:
-                print("")
-            for left_space in range(0, self.__position[0]):
-                print(" ", end="")
-            print("#" * self.__size, end="")
-            if self.__position[1] <= 0:
-                for right_space in range(self.position[1], 0, 1):
+        if self.__size != 0:
+            for new_line in range(0, self.__position[1]):
+                        print("")
+            for i in range(0, self.__size):
+                if i != 0:
+                    print("")
+                for space in range(0, self.__position[0]):
                     print(" ", end="")
+                print("#" * self.__size, end="")
         print("")
 
     @property
