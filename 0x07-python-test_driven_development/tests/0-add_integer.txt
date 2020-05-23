@@ -29,11 +29,11 @@ Integer + Str, trying to add two differents data types:
 
 Integer + Float:
     >>> add(1, 1.5)
-    2.5
+    2
 
 Float + Integer:
     >>> add(1.5, 1)
-    2.5
+    2
 
 Addition without second parameter:
     >>> add(1,)
