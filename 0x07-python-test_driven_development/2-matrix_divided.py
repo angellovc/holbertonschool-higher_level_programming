@@ -31,10 +31,12 @@ def matrix_divided(matrix, div):
 
     if div == 0:
         errors("zero_error")
+    if type(div) not in [int, float]:
+        errors("div_not_number")
 
     new_matrix = []
 
-    def division(dividend): return format((dividend / div), '.2f')
+    def division(dividend): return round((dividend / div), 2)
 
     for i in range(0, len(matrix)):  # make the matrix division
         new_matrix.append(list(map(division, matrix[i])))
@@ -49,3 +51,5 @@ def errors(error):  # errors list
 of integers/floats")
     if error == "zero_error":
         raise ZeroDivisionError("division by zero")
+    if error == "div_not_number":
+        raise TypeError("div must be a number")

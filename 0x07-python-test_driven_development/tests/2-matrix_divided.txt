@@ -9,7 +9,7 @@ Import step:
 Posible division. Division [integers or floats / positive number], Matrix [same len] 
     >>> matrix = [ [1, 7.5, 3], [4, 5, 4.5] ]
     >>> print(matrix_divided(matrix, 3))
-    [['0.33', '2.50', '1.00'], ['1.33', '1.67', '1.50']]
+    [[0.33, 2.5, 1.0], [1.33, 1.67, 1.5]]
     >>> print(matrix)
     [[1, 7.5, 3], [4, 5, 4.5]]
 
@@ -46,7 +46,7 @@ Empty Matrix:
 Matrix with only one vector:
     >>> matrix = [[10,5,20]]
     >>> print(matrix_divided(matrix, 2))
-    [['5.00', '2.50', '10.00']]
+    [[5.0, 2.5, 10.0]]
 
 One vector:
     >>> matrix = [10,5,20]
@@ -69,4 +69,11 @@ Zero division:
 Negative denominator
     >>> matrix = [[1, 3, 4]]
     >>> print(matrix_divided(matrix, -10))
-    [['-0.10', '-0.30', '-0.40']]
+    [[-0.1, -0.3, -0.4]]
+
+Div no number:
+    >>> matrix = [[1, 3, 4]]
+    >>> print(matrix_divided(matrix, "uno"))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+ 
