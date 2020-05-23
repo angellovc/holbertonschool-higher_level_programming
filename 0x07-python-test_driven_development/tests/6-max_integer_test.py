@@ -19,3 +19,5 @@ class max_integer_test(unittest.TestCase):
         self.assertEqual(max_integer([]), None)
         """ one digit list """
         self.assertEqual(max_integer([1]), 1)
+        """ Max in the middle"""
+        self.assertAlmostEqual(max_integer([3, 6, 50, 9, 12]), 50)
