@@ -1,6 +1,6 @@
-The ``matrix_divided`` module
+The ``say_my_name`` module
 ======================
-Using ``matrix_divided`` into ``add``
+Using ``say_my_name`` into ``add``
 ----------------------------------
 
 Import step:

@@ -1,0 +1,89 @@
+The ``text_indentation`` module
+======================
+Using ``text_indentation`` into ``add``
+----------------------------------
+
+Import step:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+String with dot at the end:
+    >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+
+String with ? at the end:
+    >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit?")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+    <BLANKLINE>
+
+String with : at the end:
+    >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit:")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit:
+    <BLANKLINE>
+
+'.', ':' and '?' in any position of the string:
+    >>> text_indentation("Lorem: ipsum dolor, sit. amet consectetur? adipiscing elit?")
+    Lorem:
+    <BLANKLINE>
+    ipsum dolor, sit.
+    <BLANKLINE>
+    amet consectetur?
+    <BLANKLINE>
+    adipiscing elit?
+    <BLANKLINE>
+
+No . at the end of the string:
+    >>> text_indentation("Hello sr")
+    Hello sr
+
+Three dots:
+    >>> text_indentation("...")
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+"?.:" in the middle of words without spaces:
+    >>> text_indentation("Strange.thing?solomon")
+    Strange.
+    <BLANKLINE>
+    thing?
+    <BLANKLINE>
+    solomon
+
+Mixed:
+    >>> text_indentation("::.:..?sda'-...,.")
+    :
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    sda'-.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    ,.
+    <BLANKLINE>
+
+No strings as parameters:
+    >>> text_indentation(13330)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+No strings as parameters:
+    >>> text_indentation(["strings"])
+    Traceback (most recent call last):
+    TypeError: text must be a string

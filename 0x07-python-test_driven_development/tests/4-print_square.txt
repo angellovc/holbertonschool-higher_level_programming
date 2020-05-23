@@ -1,6 +1,6 @@
-The ``matrix_divided`` module
+The ``print_square`` module
 ======================
-Using ``matrix_divided`` into ``add``
+Using ``print_square`` into ``add``
 ----------------------------------
 
 Import step:
