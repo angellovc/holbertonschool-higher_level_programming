@@ -18,4 +18,5 @@ def print_square(size):
         if row != 0:
             print("")
         print("#" * size, end="")  # print the columns
-    print("")
+    if size != 0:
+        print("")
