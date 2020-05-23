@@ -52,3 +52,13 @@ Addition more arguments than are expected:
     >>> add(32, 1.3, 32)
     Traceback (most recent call last):
     TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Addition Nan:
+    >>> add(float('Nan'), 1.3)
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+Float overflow. Cientific notation number:
+    >>> add(10e1100, 1.3)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
