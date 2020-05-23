@@ -13,3 +13,7 @@ class max_integer_test(unittest.TestCase):
     def test_nevative(self):
         """ """
         self.assertEqual(max_integer([-3, -6, -9, -12]), -3)
+
+    def test_empty_list(self):
+        """ """
+        self.assertEqual(max_integer([]), None)
