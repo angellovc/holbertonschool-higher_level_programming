@@ -25,7 +25,6 @@ Positive odd Number. Normal condions:
 
 Zero number. Zero passed as a parameter:
     >>> print_square(0)
-    <BLANKLINE>
 
 Negative number as argument:
     >>> print_square(-1)
