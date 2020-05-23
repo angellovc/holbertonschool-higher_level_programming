@@ -1,0 +1,43 @@
+The ``matrix_divided`` module
+======================
+Using ``matrix_divided`` into ``add``
+----------------------------------
+
+Import step:
+    >>> print_square = __import__('4-print_square').print_square
+
+Positive even Number. Normal condions:
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+Positive odd Number. Normal condions:
+    >>> print_square(7)
+    #######
+    #######
+    #######
+    #######
+    #######
+    #######
+    #######
+
+Zero number. Zero passed as a parameter:
+    >>> print_square(0)
+    <BLANKLINE>
+
+Negative number as argument:
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+No number size:
+    >>> print_square("uno")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Float size:
+    >>> print_square(5.50)
+    Traceback (most recent call last):
+    TypeError: size must be an integer

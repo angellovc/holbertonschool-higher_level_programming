@@ -1,0 +1,45 @@
+The ``add_integer`` module
+======================
+Using ``add_integer`` into ``add``
+----------------------------------
+Import step:
+    >>> add = __import__('0-add_integer').add_integer
+
+Positive integers addition:
+    >>> add(1, 1)
+    2
+
+Positive + Negative:
+    >>> add(1, -1)
+    0
+
+Negative + Positive:
+    >>> add(-1, 1)
+    0
+
+Str + Integer, trying to add two differents data types:
+    >>> add("asd", 1)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Integer + Str, trying to add two differents data types:
+    >>> add(1, "asd")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+Integer + Float:
+    >>> add(1, 1.5)
+    2.5
+
+Float + Integer:
+    >>> add(1.5, 1)
+    2.5
+
+Addition without second parameter:
+    >>> add(1,)
+    99
+
+Addition with keywords:
+    >>> add(b=1,a=98)
+    99
+

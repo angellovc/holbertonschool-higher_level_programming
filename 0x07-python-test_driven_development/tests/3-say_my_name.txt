@@ -1,0 +1,40 @@
+The ``matrix_divided`` module
+======================
+Using ``matrix_divided`` into ``add``
+----------------------------------
+
+Import step:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Two strings: first and last name usgin string
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+Mixed [first_name: number] [Last_name: string]:
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Mixed [first_name: string] [last_name: number]: 
+    >>> say_my_name("White", 12)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+One string. first name without last name:
+    >>> say_my_name("Kyle",)
+    My name is Kyle 
+
+None. first name none:
+    >>> say_my_name(None,)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+None. last name none:
+    >>> say_my_name("Fred", None)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+List:
+    >>> say_my_name(["Fry"], None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
