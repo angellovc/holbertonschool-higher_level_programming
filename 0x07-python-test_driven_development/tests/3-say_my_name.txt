@@ -15,6 +15,11 @@ Mixed [first_name: number] [Last_name: string]:
     Traceback (most recent call last):
     TypeError: first_name must be a string
 
+Just integers:
+    >>> say_my_name(12, 12)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
 Mixed [first_name: string] [last_name: number]: 
     >>> say_my_name("White", 12)
     Traceback (most recent call last):
