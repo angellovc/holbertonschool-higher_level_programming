@@ -14,6 +14,8 @@ class max_integer_test(unittest.TestCase):
         """ """
         self.assertEqual(max_integer([-3, -6, -9, -12]), -3)
 
-    def test_empty_list(self):
-        """ """
+    def test_list(self):
+        """ empty list """
         self.assertEqual(max_integer([]), None)
+        """ one digit list """
+        self.assertEqual(max_integer([1]), 1)
