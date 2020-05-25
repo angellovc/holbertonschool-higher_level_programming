@@ -10,7 +10,7 @@ class Rectangle:
         width: only receive integers and positive numbers
         height: only receive integers and positive numbers
     """
-    def __init__(self, width_value, height_value):
+    def __init__(self, width_value=0, height_value=0):
         """[constructor]
 
         Arguments:
