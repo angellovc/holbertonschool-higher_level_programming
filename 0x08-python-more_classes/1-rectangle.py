@@ -20,7 +20,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        if type(value) is not int:
+        if type(value) != int:
             errors("width_no_integer")
         if value < 0:
             errors("width_negative")
@@ -32,7 +32,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        if type(value) is not int:
+        if type(value) != int:
             errors("height_no_integer")
         if value < 0:
             errors("height_negative")
