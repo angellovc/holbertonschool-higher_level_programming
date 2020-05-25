@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-
-
-#!/usr/bin/python3
 """ class Rectangle module """
 
 
@@ -72,6 +69,7 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
+
 
 def errors(error):
     """ [errors]

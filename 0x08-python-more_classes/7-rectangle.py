@@ -7,8 +7,8 @@ class Rectangle:
     Rectangle
 
     Attributes:
-        number_of_instances:
-        print_symbol: 
+        number_of_instances
+        print_symbol
         width: only receive integers and positive numbers
         height: only receive integers and positive numbers
 
