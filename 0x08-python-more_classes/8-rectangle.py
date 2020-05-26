@@ -84,7 +84,7 @@ class Rectangle:
     def bigger_or_equal(rect_1, rect_2):
         if not isinstance(rect_1, Rectangle):
             errors("rect_1_no_rectangle")
-        if not isinstance(rect_1, Rectangle):
+        if not isinstance(rect_2, Rectangle):
             errors("rect_2_no_rectangle")
         if rect_1.area() >= rect_2.area():
             return rect_1
