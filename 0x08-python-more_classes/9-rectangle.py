@@ -24,6 +24,14 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
+        if type(width) is not int:
+            errors("width_no_integer")
+        if width < 0:
+            errors("width_negative")
+        if type(height) is not int:
+            errors("height_no_integer")
+        if height < 0:
+            errors("height_negative")
         self.__width = width
         self.__height = height
         Rectangle.number_of_instances += 1
@@ -92,11 +100,7 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        if type(size) != int:
-            errors("width_no_integer")
-        if size < 0:
-            errors("width_negative")
-        return Rectangle(size, size)
+        return Rectangle(width=size, height=size)
 
 
 def errors(error):
