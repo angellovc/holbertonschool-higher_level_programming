@@ -92,7 +92,7 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        return eval("Rectangle({}, {})".format(size, size))
+        return Rectangle(size, size)
 
 
 def errors(error):
