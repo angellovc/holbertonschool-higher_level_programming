@@ -92,8 +92,6 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        if type(size) is not int:
-            errors("size_square_no_integer")
         return eval("Rectangle({}, {})".format(size, size))
 
 
