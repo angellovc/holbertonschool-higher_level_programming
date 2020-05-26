@@ -92,7 +92,11 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        return cls(size, size)
+        if type(size) != int:
+            errors("width_no_integer")
+        if size < 0:
+            errors("width_negative")
+        return Rectangle(size, size)
 
 
 def errors(error):
@@ -114,11 +118,7 @@ def errors(error):
         raise TypeError("height must be an integer")
     if error == "height_negative":
         raise ValueError("height must be >= 0")
-    # size square errors
-    if error == "size_square_no_integer":
-        raise TypeError("height must be an integer")
-    if error == "size_square_negative":
-        raise ValueError("height must be >= 0")
+    # rectangles
     if error == "rect_1_no_rectangle":
         raise TypeError("rect_1 must be an instance of Rectangle")
     if error == "rect_2_no_rectangle":
