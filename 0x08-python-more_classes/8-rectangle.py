@@ -82,6 +82,10 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        if isinstance(rect_1, Rectangle):
+            error("rect_1_no_rectangle")
+        if isinstance(rect_1, Rectangle):
+            error("rect_2_no_rectangle")
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
@@ -106,3 +110,7 @@ def errors(error):
         raise TypeError("height must be an integer")
     if error == "height_negative":
         raise ValueError("height must be >= 0")
+    if error == "rect_1_no_rectangle":
+        raise TypeError("rect_1 must be an instance of Rectangle")
+    if error == "rect_2_no_rectangle":
+        raise TypeError("rect_2 must be an instance of Rectangle")
