@@ -51,3 +51,9 @@ One element:
     >>> my_list.append(1)
     >>> my_list.print_sorted()
     [1]
+
+Append no arguments:
+    >>> my_list = MyList()
+    >>> my_list.append()
+    Traceback (most recent call last):
+    TypeError: append() takes exactly one argument (0 given)
