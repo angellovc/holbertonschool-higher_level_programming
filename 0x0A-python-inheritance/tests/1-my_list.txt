@@ -59,6 +59,6 @@ Append no arguments:
     TypeError: append() takes exactly one argument (0 given)
 
 Is instance?:
-    >>> my_list = MyList
-    >>> issubclass(my_list, list)
+    >>> my_list = MyList()
+    >>> isinstance(my_list, list)
     True
