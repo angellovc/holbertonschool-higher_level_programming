@@ -57,3 +57,8 @@ Append no arguments:
     >>> my_list.append()
     Traceback (most recent call last):
     TypeError: append() takes exactly one argument (0 given)
+
+Is instance?:
+    >>> my_list = MyList
+    >>> issubclass(my_list, list)
+    True
