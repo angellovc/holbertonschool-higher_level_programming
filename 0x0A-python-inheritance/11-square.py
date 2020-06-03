@@ -5,7 +5,7 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 class Square(Rectangle):
     def __init__(self, size):
-        """initialize width and height values
+        """ initialize width and height values
         Arguments:
             size {[int]}
         """
@@ -19,6 +19,6 @@ class Square(Rectangle):
         return self.__width * self.__height
 
     def __str__(self):
-        """Return a printable element refered to the area of the Square class
+        """ Return a printable element refered to the area of the Square class
         """
         return "[Square] {}/{}".format(self.__width, self.__height)
