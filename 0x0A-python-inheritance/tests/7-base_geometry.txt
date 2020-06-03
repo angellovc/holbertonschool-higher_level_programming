@@ -83,3 +83,13 @@ Argument as bool:
     Traceback (most recent call last):
     TypeError: Number must be an integer
 
+Doc strings
+    >>> print(len(__import__('7-base_geometry').BaseGeometry.area.__doc__) > 0)
+    True
+    >>> print(len(__import__('7-base_geometry').BaseGeometry.integer_validator.__doc__) > 0)
+    True
+    >>> print(len(__import__('7-base_geometry').__doc__) > 0)
+    True
+    >>> print(len(__import__('7-base_geometry').BaseGeometry.__doc__) > 0)
+    True
+    
