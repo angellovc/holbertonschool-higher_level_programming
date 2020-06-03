@@ -10,7 +10,7 @@ class Square(Rectangle):
         Arguments:
             size {[int]}
         """
-        super().integer_validator("height", size)
+        super().integer_validator("size", size)
         super().__init__(size, size)
         self.__width = size
         self.__height = size
@@ -20,7 +20,7 @@ class Square(Rectangle):
         return self.__width * self.__height
 
     def __str__(self):
-        """ Return a printable element refered 
+        """ Return a printable element refered
         to the area of the Square class
         """
         return "[Square] {}/{}".format(self.__width, self.__height)
