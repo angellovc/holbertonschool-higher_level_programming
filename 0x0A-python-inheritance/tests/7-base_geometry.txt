@@ -34,8 +34,12 @@ One argument to integer_validator:
     Traceback (most recent call last):
     TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-No arguments to integer_validator
+No arguments to integer_validator:
     >>> bg = BaseGeometry()
     >>> bg.integer_validator()
     Traceback (most recent call last):
     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Name no string:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator(12, 6)
