@@ -64,6 +64,13 @@ Arguments as Floats:
     Traceback (most recent call last):
     TypeError: Number must be an integer
 
+None Argument:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("Number", None)
+    Traceback (most recent call last):
+    TypeError: Number must be an integer
+
+
 Arguments as tuples:
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("Number", (1, 32))
@@ -75,3 +82,4 @@ Argument as bool:
     >>> bg.integer_validator("Number", (1, 32))
     Traceback (most recent call last):
     TypeError: Number must be an integer
+
