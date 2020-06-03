@@ -10,4 +10,4 @@ class Square(Rectangle):
     """
     def __init__(self, size):
         """ Initialize square usging rectangle constructor """
-        Rectangle.__init__(self, size, size)
+        super().__init__(size, size)
