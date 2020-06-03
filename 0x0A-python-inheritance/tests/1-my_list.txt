@@ -52,13 +52,16 @@ One element:
     >>> my_list.print_sorted()
     [1]
 
-Append no arguments:
+Negative numbers:
     >>> my_list = MyList()
-    >>> my_list.append()
-    Traceback (most recent call last):
-    TypeError: append() takes exactly one argument (0 given)
+    >>> my_list.append(4)
+    >>> my_list.append(-4)
+    >>> my_list.append(7)
+    >>> my_list.print_sorted()
+    [-4, 4, 7]
 
 Is instance?:
     >>> my_list = MyList()
     >>> isinstance(my_list, list)
     True
+
