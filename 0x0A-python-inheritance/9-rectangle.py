@@ -11,13 +11,14 @@ class Rectangle(BaseGeometry):
             width {[int]}
             height {[int]}
         """
-        super().integer_validator(width, width)
-        super().integer_validator(height, height)
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
         self.__width = width
         self.__height = height
 
     def __str__(self):
-        """Return a printable element refered to the area of the Rectangle class
+        """Return a printable element refered
+        to the area of the Rectangle class
         """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
