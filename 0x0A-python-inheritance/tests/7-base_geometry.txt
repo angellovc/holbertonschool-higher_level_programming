@@ -52,20 +52,26 @@ Arguments to area methods:
     Traceback (most recent call last):
     TypeError: area() takes 1 positional argument but 2 were given
 
-
-
+Arguments as List:
     >>> bg = BaseGeometry()
-    >>> bg.integer_validator("my_int", 12)
-    >>> bg.integer_validator("width", 89)
+    >>> bg.integer_validator("Number", [2,2])
+    Traceback (most recent call last):
+    TypeError: Number must be an integer
 
-    >>> try:
-    ...     bg.integer_validator("name", "John")
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] name must be an integer
+Arguments as Floats:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("Number", 43.44)
+    Traceback (most recent call last):
+    TypeError: Number must be an integer
 
-    >>> try:
-    ...     bg.integer_validator("name", -1)
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [ValueError] name must be greater than 0
+Arguments as tuples:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("Number", (1, 32))
+    Traceback (most recent call last):
+    TypeError: Number must be an integer
+
+Argument as bool:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("Number", (1, 32))
+    Traceback (most recent call last):
+    TypeError: Number must be an integer
