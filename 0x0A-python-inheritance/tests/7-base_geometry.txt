@@ -22,12 +22,6 @@ Passed two string through integer_validator:
     Traceback (most recent call last):
     TypeError: Number must be an integer
 
-Passed two string through integer_validator:
-    >>> bg = BaseGeometry()
-    >>> bg.integer_validator("Number", "two")
-    Traceback (most recent call last):
-    TypeError: Number must be an integer
-
 One argument to integer_validator:
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("Number")
@@ -45,3 +39,15 @@ BaseGeometry area methods:
     >>> bg.area()
     Traceback (most recent call last):
     Exception: area() is not implemented
+
+    zero or negative number:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ValueError: age must be greater than 0
+
+Passed two string through integer_validator:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", "two")
+    Traceback (most recent call last):
+    TypeError: age must be an integer
