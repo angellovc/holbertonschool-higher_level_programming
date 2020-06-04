@@ -11,7 +11,7 @@ def append_after(filename="", search_string="", new_string=""):
             new_list.append(line)
             line = line.split()
             for word in line:
-                if word == search_string:
+                if word[0:len(search_string)] == search_string:
                     new_list.append(new_string)
             nline += 1
         new_list = "".join(new_list)
