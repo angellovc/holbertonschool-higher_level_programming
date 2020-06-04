@@ -4,6 +4,8 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """ append a line just after the search string was founded """
+    with open(filename, mode="a", encoding="UTF8") as f:
+        pass
     with open(filename, mode="r+", encoding="UTF8") as f:
         nline = 0
         new_list = []
