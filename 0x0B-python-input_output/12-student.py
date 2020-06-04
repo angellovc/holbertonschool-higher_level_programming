@@ -14,6 +14,6 @@ class Student:
         filtered = {}
         dic = self.__dict__
         for key in dic:
-            if attrs is not None and key in attrs:
+            if attrs is None or key in attrs:
                 filtered[key] = dic[key]
         return filtered
