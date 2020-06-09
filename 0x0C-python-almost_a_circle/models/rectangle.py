@@ -1,9 +1,15 @@
 #!/usr/bin/python3
+""" Rectangle class module """
 from models.base import Base
 
 
 class Rectangle(Base):
+    """ This is a Rectangle class
+    Args:
+        Base (class): [inherit id from class]
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ Constructor method """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -12,10 +18,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """ rectangle width getter """
         return self.__width
 
     @width.setter
     def width(self, width):
+        """ rectangle widht setter """
         if type(width) != int:
             errors("no_integer", "width")
         if width <= 0:
@@ -24,10 +32,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """ rectangle height getter """
         return self.__height
 
     @height.setter
     def height(self, height):
+        """ rectangle height setter """
         if type(height) != int:
             errors("no_integer", "height")
         if height <= 0:
@@ -36,10 +46,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """ rectangle axis x getter """
         return self.__x
 
     @x.setter
     def x(self, x):
+        """ rectangle axis x getter """
         if type(x) != int:
             errors("no_integer", "x")
         if x < 0:
@@ -48,10 +60,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """ rectangle axis y getter """
         return self.__y
 
     @y.setter
     def y(self, y):
+        """ rectangle axis y setter """
         if type(y) != int:
             errors("no_integer", "y")
         if y < 0:
@@ -59,9 +73,14 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
+        """ represent the rectangle area of the instance """
         return self.width * self.height
 
     def display(self):
+        """ show a rectangle on the screen based on his properties
+            x, y axis
+            weidht, height
+        """
         print('\n' * self.y, end="")
         for row in range(0, self.height):
             print(" " * self.x, end="")
@@ -69,6 +88,7 @@ class Rectangle(Base):
             print("")
 
     def __str__(self):
+        """ Return a string representation of rectangle instance """
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.id, self.x, self.y, self.width, self.height)
 
