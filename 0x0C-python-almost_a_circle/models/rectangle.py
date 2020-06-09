@@ -1,0 +1,98 @@
+#!/usr/bin/python3
+from models.base import Base
+
+
+class Rectangle(Base):
+    def __init__(self, width, height, x=0, y=0, id=None):
+        super().__init__(id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, width):
+        if type(width) != int:
+            errors("no_integer", "width")
+        if width <= 0:
+            errors("zero_or_negative", "width")
+        self.__width = width
+
+    @property
+    def height(self):
+        return self.__height
+
+    @height.setter
+    def height(self, height):
+        if type(height) != int:
+            errors("no_integer", "height")
+        if height <= 0:
+            errors("zero_or_negative", "height")
+        self.__height = height
+
+    @property
+    def x(self):
+        return self.__x
+
+    @x.setter
+    def x(self, x):
+        if type(x) != int:
+            errors("no_integer", "x")
+        if x < 0:
+            errors("negative", "x")
+        self.__x = x
+
+    @property
+    def y(self):
+        return self.__y
+
+    @y.setter
+    def y(self, y):
+        if type(y) != int:
+            errors("no_integer", "y")
+        if y < 0:
+            errors("negative", "y")
+        self.__y = y
+
+    def area(self):
+        return self.width * self.height
+
+    def display(self):
+        print('\n' * self.y, end="")
+        for row in range(0, self.height):
+            print(" " * self.x, end="")
+            print("#" * self.width, end="")
+            print("")
+
+    def __str__(self):
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        if args:
+            keys = ["id", "width", "height", "x", "y"][0:len(args)]
+            for value, key in zip(args, keys):
+                setattr(self, key, value)
+        else:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
+
+    def to_dictionary(self):
+        keys = ["id", "width", "height", "x", "y"]
+        dic = {}
+        for key in keys:
+            dic[key] = getattr(self, key)
+        return dic
+
+
+def errors(error, variable=""):
+    if error == "no_integer":
+        raise TypeError("{} must be an integer".format(variable))
+    if error == "zero_or_negative":
+        raise ValueError("{} must be > 0".format(variable))
+    if error == "negative":
+        raise ValueError("{} must be >= 0".format(variable))

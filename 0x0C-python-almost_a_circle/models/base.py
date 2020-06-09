@@ -1,0 +1,95 @@
+#!/usr/bin/python3
+""" Base module """
+import json
+import csv
+
+
+class Base:
+    """ Base class """
+    __nb_objects = 0
+
+    def __init__(self, id=None):
+        if id is None:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
+        else:
+            self.id = id
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        if list_dictionaries == None or len(list_dictionaries) == 0:
+            return "[]"
+        else:
+            return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def from_json_string(json_string):
+        return json.loads(json_string)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        new_list = []
+
+        with open(cls.__name__+".json", mode="w", encoding="UTF8") as f:
+            f.write(cls.to_json_string(new_list))
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        doc = cls.__name__+".csv"
+        with open(doc, mode="w", encoding="UTF8", newline='') as f:
+            writer = csv.writer(f)
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    writer.writerow(
+                        [obj.id, obj.width, obj.height, obj.x, obj.y])
+                else:
+                    writer.writerow(
+                        [obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        doc = cls.__name__+".csv"
+        with open(doc, mode="r", encoding="UTF8", newline='') as f:
+            csv_reader = csv.reader(f)
+            instances = []
+            keys = {}
+            for obj in csv_reader:
+                if cls.__name__ == "Rectangle":
+                    keys["width"] = int(obj[1])
+                    keys["height"] = int(obj[2])
+                    keys["x"] = int(obj[3])
+                    keys["y"] = int(obj[4])
+                    keys["id"] = int(obj[0])
+                    instances.append(cls.create(**keys))
+                else:
+                    keys["size"] = int(obj[1])
+                    keys["x"] = int(obj[2])
+                    keys["y"] = int(obj[3])
+                    keys["id"] = int(obj[0])
+                    instances.append(cls.create(**keys))
+            return instances
+
+    @classmethod
+    def create(cls, **dictionary):
+        arg = []
+        if cls.__name__ == "Rectangle":
+            keys = ["width", "height", "x", "y", "id"]
+        else:
+            keys = ["size", "x", "y", "id"]
+        for key in keys:
+            if dictionary.get(key) is not None:
+                arg.append(dictionary[key])
+        return cls(*arg)
+
+    @classmethod
+    def load_from_file(cls):
+        try:
+            with open(cls.__name__+".json", mode="r", encoding="UTF8") as f:
+                instances = []
+                json = cls.from_json_string(f.read())
+                for obj in json:
+                    instances.append(cls.create(**obj))
+                return instances
+        except FileNotFoundError:
+            return []
+    
