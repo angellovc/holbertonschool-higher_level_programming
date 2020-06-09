@@ -9,6 +9,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """ id models constructor """
         if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
@@ -17,17 +18,26 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        if list_dictionaries == None or len(list_dictionaries) == 0:
+        """ convert a dictionarie into string
+        this function is used as a complement of
+        to_dictionary method to store the current obj state
+        into a json file
+        """
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string):
+        """ convert a json reprentation into a
+        python object. Usefull to read json files
+        """
         return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ save a obj or objs into a json file """
         new_list = []
 
         with open(cls.__name__+".json", mode="w", encoding="UTF8") as f:
@@ -35,6 +45,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """ used to save an obj or some obj into a csv file """
         doc = cls.__name__+".csv"
         with open(doc, mode="w", encoding="UTF8", newline='') as f:
             writer = csv.writer(f)
@@ -48,6 +59,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """ load an obj from a csv file """
         doc = cls.__name__+".csv"
         with open(doc, mode="r", encoding="UTF8", newline='') as f:
             csv_reader = csv.reader(f)
@@ -71,6 +83,12 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """ create an instance from a dictionary
+        or an argument list. Usually when you recover
+        an obj from a csv or json file, you first get
+        a dictionary or a list, this function is usefull
+        to load the last instances
+        """
         arg = []
         if cls.__name__ == "Rectangle":
             keys = ["width", "height", "x", "y", "id"]
@@ -83,6 +101,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """ recover an obj from a json file """
         try:
             with open(cls.__name__+".json", mode="r", encoding="UTF8") as f:
                 instances = []
@@ -92,4 +111,3 @@ class Base:
                 return instances
         except FileNotFoundError:
             return []
-    

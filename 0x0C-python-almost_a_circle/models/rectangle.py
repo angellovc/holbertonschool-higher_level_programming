@@ -93,6 +93,9 @@ class Rectangle(Base):
             self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
+        """ update values usually used to return
+        informations from json files
+        """
         if args:
             keys = ["id", "width", "height", "x", "y"][0:len(args)]
             for value, key in zip(args, keys):
@@ -102,6 +105,7 @@ class Rectangle(Base):
                 setattr(self, key, kwargs[key])
 
     def to_dictionary(self):
+        """ get the current state of rectangle instance into a dictionary """
         keys = ["id", "width", "height", "x", "y"]
         dic = {}
         for key in keys:
@@ -110,6 +114,7 @@ class Rectangle(Base):
 
 
 def errors(error, variable=""):
+    """ module errors """
     if error == "no_integer":
         raise TypeError("{} must be an integer".format(variable))
     if error == "zero_or_negative":
