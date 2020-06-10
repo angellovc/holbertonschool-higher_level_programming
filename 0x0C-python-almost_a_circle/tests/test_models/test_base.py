@@ -30,7 +30,10 @@ class Base_test(unittest.TestCase):
     
     def test_from_json_string(self):
         self.assertEqual(Base.from_json_string(None), [])
-        
+
+    def test_to_json_string(self):
+        self.assertEqual(Base.to_json_string(None), "[]")
+
 
 
 if __name__ == "__main__":
