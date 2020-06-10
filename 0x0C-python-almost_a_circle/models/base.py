@@ -50,7 +50,7 @@ class Base:
         with open(doc, mode="w", encoding="UTF8", newline='') as f:
             writer = csv.writer(f)
             if list_objs is None:
-                    writer.writerow([])
+                writer.writerow([])
             else:
                 for obj in list_objs:
                     if cls.__name__ == "Rectangle":
