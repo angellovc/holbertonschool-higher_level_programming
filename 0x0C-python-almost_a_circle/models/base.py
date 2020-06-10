@@ -97,7 +97,8 @@ class Base:
         for key in keys:
             if dictionary.get(key) is not None:
                 arg.append(dictionary[key])
-        return cls(*arg)
+        new = cls(*arg)
+        return new
 
     @classmethod
     def load_from_file(cls):
