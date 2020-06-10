@@ -28,8 +28,8 @@ class Base_test(unittest.TestCase):
         b5 = Base(None)
         self.assertTrue(b5.id == 4)
     
-    def to_json_string(self):
-        self.assertEqual(Base.from_json_string(none), [])
+    def test_from_json_string(self):
+        self.assertEqual(Base.from_json_string(None), [])
         
 
 
