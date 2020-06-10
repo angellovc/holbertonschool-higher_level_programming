@@ -49,16 +49,13 @@ class Base:
         doc = cls.__name__+".csv"
         with open(doc, mode="w", encoding="UTF8", newline='') as f:
             writer = csv.writer(f)
-            if list_objs is None:
-                writer.writerow([])
-            else:
-                for obj in list_objs:
-                    if cls.__name__ == "Rectangle":
-                        writer.writerow(
-                            [obj.id, obj.width, obj.height, obj.x, obj.y])
-                    else:
-                        writer.writerow(
-                            [obj.id, obj.size, obj.x, obj.y])
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    writer.writerow(
+                        [obj.id, obj.width, obj.height, obj.x, obj.y])
+                else:
+                    writer.writerow(
+                        [obj.id, obj.size, obj.x, obj.y])
 
     @classmethod
     def load_from_file_csv(cls):
@@ -94,9 +91,9 @@ class Base:
         """
         arg = []
         if cls.__name__ == "Rectangle":
-            keys = ["id", "width", "height", "x", "y"]
+            keys = ["width", "height", "x", "y", "id"]
         else:
-            keys = ["id", "size", "x", "y"]
+            keys = ["size", "x", "y", "id"]
         for key in keys:
             if dictionary.get(key) is not None:
                 arg.append(dictionary[key])
