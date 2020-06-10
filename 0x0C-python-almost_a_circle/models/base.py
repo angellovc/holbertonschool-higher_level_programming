@@ -94,12 +94,11 @@ class Base:
         a dictionary or a list, this function is usefull
         to load the last instances
         """
-        arg = []
         if cls.__name__ == "Rectangle":
-            new = cls(1, 1, 0, 0, 0)
+            new = cls(1, 1)
             new.update(**dictionary)
         else:
-            new = cls(1, 0, 0, 0)
+            new = cls(1)
             new.update(**dictionary)
         return new
 
