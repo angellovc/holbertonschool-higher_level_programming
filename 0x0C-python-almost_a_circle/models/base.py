@@ -97,12 +97,13 @@ class Base:
         arg = []
         if cls.__name__ == "Rectangle":
             keys = ["id", "width", "height", "x", "y"]
+            new = cls(1, 1, 0, 0, 0)
         else:
             keys = ["id", "size", "x", "y"]
+            new = cls(1, 0, 0, 0)
         for key in keys:
             if dictionary.get(key) is not None:
                 arg.append(dictionary[key])
-        new = cls(1, 1)
         new.update(*arg)
         return new
 
