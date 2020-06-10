@@ -173,3 +173,7 @@ __init__() missing 1 required positional argument: 'height'")
         self.assertEqual(r1.__str__(),  "[Rectangle] (12) 2/1 - 4/6")
         r1.height = 10
         self.assertEqual(r1.__str__(), "[Rectangle] (12) 2/1 - 4/10")
+
+
+if __name__ == "__main__":
+    unittest.main()

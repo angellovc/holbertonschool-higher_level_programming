@@ -27,3 +27,11 @@ class Base_test(unittest.TestCase):
         self.assertTrue(b4.id == 3)
         b5 = Base(None)
         self.assertTrue(b5.id == 4)
+    
+    def to_json_string(self):
+        self.assertEqual(Base.from_json_string(none), [])
+        
+
+
+if __name__ == "__main__":
+    unittest.main()

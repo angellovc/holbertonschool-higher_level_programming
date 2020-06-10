@@ -151,3 +151,7 @@ __init__() missing 1 required positional argument: 'size'")
         self.assertEqual(s1.__str__(),  "[Square] (12) 2/1 - 6")
         s1.size = 10
         self.assertEqual(s1.__str__(), "[Square] (12) 2/1 - 10")
+
+
+if __name__ == "__main__":
+    unittest.main()
