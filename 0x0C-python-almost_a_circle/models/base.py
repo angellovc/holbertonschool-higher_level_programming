@@ -33,7 +33,10 @@ class Base:
         """ convert a json reprentation into a
         python object. Usefull to read json files
         """
-        return json.loads(json_string)
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
