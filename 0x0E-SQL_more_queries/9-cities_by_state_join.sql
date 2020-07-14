@@ -1,0 +1,6 @@
+-- that lists all cities contained in the database
+-- relationing two tables cities and states
+SELECT cities.id, cities.name, states.name
+FROM cities
+LEFT JOIN states
+ON cities.state_id = states.id;
