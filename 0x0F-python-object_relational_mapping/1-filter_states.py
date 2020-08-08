@@ -10,7 +10,7 @@ if __name__ == "__main__":
         host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     cursor_db = db.cursor()
     cursor_db.execute("SELECT * FROM states\
-    WHERE name REGEXP '^N' ORDER BY states.id ASC")
+    WHERE name REGEXP '^N' ORDER BY id ASC")
     states = cursor_db.fetchall()
     for state in states:
         print(state)
