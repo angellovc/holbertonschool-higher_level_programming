@@ -15,7 +15,9 @@ if __name__ == '__main__':
             )
     Session = sessionmaker(bind=engine)
     session = Session()
-    city = session.query(State).filter(State.name.like('%s' % (sys.argv[4], ))).first()
+    city = session.query(State)
+    .filter(State.name.like('%s' % (sys.argv[4], )))
+    .first()
     if city is None:
         print("Not found")
     else:
