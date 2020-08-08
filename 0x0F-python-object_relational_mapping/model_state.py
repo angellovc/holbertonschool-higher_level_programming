@@ -15,5 +15,6 @@ class State(Base):
     name = Column(String(length=128), nullable=False)
 
     def __init__(self, name, id=None):
+        """ State constructor """
         self.id = None
         self.name = name
