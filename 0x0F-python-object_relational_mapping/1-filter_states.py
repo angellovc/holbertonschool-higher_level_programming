@@ -13,6 +13,8 @@ if __name__ == "__main__":
     WHERE name REGEXP '^N' ORDER BY id ASC")
     states = cursor_db.fetchall()
     for state in states:
+        if (state[1][0] is 'n'):
+            continue
         print(state)
     cursor_db.close()
     db.close()
