@@ -13,3 +13,7 @@ class State(Base):
 
     id = Column(Integer, autoincrement=True, primary_key=True, nullable=False)
     name = Column(String(length=128), nullable=False)
+
+    def __init__(self, name, id=None):
+        self.id = None
+        self.name = name
