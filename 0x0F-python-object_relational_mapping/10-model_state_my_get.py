@@ -15,7 +15,8 @@ if __name__ == '__main__':
             )
     Session = sessionmaker(bind=engine)
     session = Session()
-    cities = session.query(State).filter_by(name="{}".format(sys.argv[4],))
-    print(cities)
-    for city in cities:
-        print("{}".format(city.id))
+    city = session.query(State).filter(State.name.like('%{}%'.format(sys.argv[4]))).first()
+    if city is None:
+        print("Not found")
+    else:
+        print(city.id)
