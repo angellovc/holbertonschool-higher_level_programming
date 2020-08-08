@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""lists all states with a name starting
-with N (upper N) from the database hbtn_0e_0_usa
+"""displays all values in the states table
+of hbtn_0e_0_usa where name matches the argument
+in a safest way
 """
 import MySQLdb
 import sys
@@ -10,7 +11,7 @@ if __name__ == "__main__":
         host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     cursor_db = db.cursor()
     cursor_db.execute(
-        "SELECT * FROM states WHERE name = '{}'".format(sys.argv[4]))
+        "SELECT * FROM states WHERE name = %s;", (sys.argv[4], ))
     states = cursor_db.fetchall()
     for state in states:
         print(state)

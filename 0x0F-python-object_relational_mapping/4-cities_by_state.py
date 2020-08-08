@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""lists all states with a name starting
-with N (upper N) from the database hbtn_0e_0_usa
+"""ists all cities from the database hbtn_0e_4_usa
 """
 import MySQLdb
 import sys
@@ -10,7 +9,11 @@ if __name__ == "__main__":
         host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     cursor_db = db.cursor()
     cursor_db.execute(
-        "SELECT * FROM states WHERE name = '{}'".format(sys.argv[4]))
+        "SELECT cities.id, cities.name, states.name\
+        FROM cities\
+        LEFT JOIN states\
+        ON cities.state_id = states.id;"
+    )
     states = cursor_db.fetchall()
     for state in states:
         print(state)
