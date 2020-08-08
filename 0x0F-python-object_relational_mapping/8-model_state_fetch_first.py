@@ -15,5 +15,5 @@ if __name__ == '__main__':
             )
     Session = sessionmaker(bind=engine)
     session = Session()
-    city = session.query(State).get(1)
+    city = session.query(State).first()
     print("{}: {}".format(city.id, city.name))
