@@ -10,7 +10,7 @@ if __name__ == "__main__":
     cursor_db = db.cursor()
     cursor_db.execute(
         "SELECT * FROM states\
-        WHERE name = '{}'\
+        WHERE BINARY name = '{}'\
         ORDER BY states.id ASC".format(sys.argv[4]))
     states = cursor_db.fetchall()
     for state in states:
