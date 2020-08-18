@@ -4,12 +4,8 @@
 
 def find_peak(list_of_integers):
     """ finds a peak in a list of unsorted integers """
-    i = 0
-    max_num = 0
+    list_of_integers.sort()
     if list_of_integers:
-        for number in list_of_integers:
-            if number > max_num:
-                max_num = number
-        return max_num
+        return list_of_integers[-1]
     else:
         return None
