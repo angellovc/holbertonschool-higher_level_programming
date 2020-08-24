@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" request module """
 from urllib import request
 from urllib import parse
 
