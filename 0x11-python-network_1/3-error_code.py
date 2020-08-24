@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 """ sends a request to the URL and
 displays the body of the response
 or status error
