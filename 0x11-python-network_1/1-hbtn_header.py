@@ -7,8 +7,9 @@ from urllib import request
 from urllib import parse
 from sys import argv
 
-data = {}
-url = argv[1]
+if __name__ == "__main__":
+    data = {}
+    url = argv[1]
 
-with request.urlopen(url) as response:
-    print(response.getheader("X-Request-Id"))
+    with request.urlopen(url) as response:
+        print(response.getheader("X-Request-Id"))
