@@ -11,7 +11,6 @@ if __name__ == "__main__":
         repo
     )
     response = requests.get(url)
-    commits = response.json()[:-10]
     for i in range(0, 10):
         commit_id = response.json()[i].get('sha')
         name = response.json()[i].get('commit').get('author').get('name')
