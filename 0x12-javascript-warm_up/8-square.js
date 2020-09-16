@@ -7,4 +7,6 @@ if (process.argv[2]) {
     }
     console.log(square);
   }
+} else {
+  console.log('Missing size');
 }
