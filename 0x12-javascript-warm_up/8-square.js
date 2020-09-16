@@ -1,7 +1,8 @@
 #!/usr/bin/node
+let square = '';
 if (process.argv[2]) {
   for (let outer = 0; outer < process.argv[2]; outer++) {
-    let square = '';
+    square = '';
     for (let inner = 0; inner < process.argv[2]; inner++) {
       square += 'X';
     }
