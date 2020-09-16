@@ -1,11 +1,10 @@
 #!/usr/bin/node
-let i;
-let max = 0;
-let secondMax = 0;
-for (i = 2; i < process.argv.length; i++) {
-  if (max < process.argv[i] || (process.argv[i] < 0 && max <= 0)) {
-    secondMax = max;
-    max = parseInt(process.argv[i]);
-  }
+let array;
+if (process.argv.length < 4) {
+  console.log(0);
+} else {
+  array = process.argv.slice(2, process.argv.length);
+  array.sort();
+  if (array[0] > 0) { array.reverse(); }
+  console.log(array[1]);
 }
-console.log(secondMax);
