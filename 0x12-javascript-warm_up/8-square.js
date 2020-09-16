@@ -1,8 +1,11 @@
 #!/usr/bin/node
-let square = '';
-let inner = 0;
-let outer = 0;
-if (process.argv[2]) {
+const number = process.argv[2];
+let square = String();
+let inner;
+let outer;
+if (isNaN(number) === true) {
+  console.log('Missing size');
+} else {
   for (outer = 0; outer < process.argv[2]; outer++) {
     square = '';
     for (inner = 0; inner < process.argv[2]; inner++) {
@@ -10,6 +13,4 @@ if (process.argv[2]) {
     }
     console.log(square);
   }
-} else {
-  console.log('Missing size');
 }
