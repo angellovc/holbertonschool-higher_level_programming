@@ -1,7 +1,7 @@
 #!/usr/bin/node
-let logHistory = [];
+const logHistory = [];
 
 exports.logMe = function (item) {
   logHistory.push(item);
   console.log(`${logHistory.length - 1}: ${item}`);
-}
+};
