@@ -6,7 +6,9 @@ module.exports = class Square extends square {
     if (c === undefined) {
       c = 'x';
     }
-    let row, column, square;
+    let row;
+    let column
+    let square;
     for (row = 0; row < this.height; row++) {
       square = '';
       for (column = 0; column < this.width; column++) {
