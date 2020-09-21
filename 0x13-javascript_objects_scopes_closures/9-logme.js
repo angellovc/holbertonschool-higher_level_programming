@@ -3,5 +3,5 @@ let logHistory = [];
 
 exports.logMe = function (item) {
   logHistory.push(item);
-  console.log(`${logHistory.length}: ${item}`);
+  console.log(`${logHistory.length - 1}: ${item}`);
 }
