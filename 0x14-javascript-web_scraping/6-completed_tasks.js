@@ -7,8 +7,8 @@ request(url, function (error, response) {
     console.log(error);
   } else {
     const tasks = JSON.parse(response.body);
-    const completedTasks = {};
     let counter = 0;
+    const completedTasks = {};
     for (let i = 0; i < tasks.length; i++) {
       if (!completedTasks[tasks[i].userId]) { counter = 0; }
       if (tasks[i].completed === true) {
@@ -16,6 +16,6 @@ request(url, function (error, response) {
         completedTasks[tasks[i].userId] = counter;
       }
     }
-    if (completedTasks) { console.log(completedTasks); }
+    if (Object.entries(completedTasks).length > 0) { console.log(completedTasks); }
   }
 });
