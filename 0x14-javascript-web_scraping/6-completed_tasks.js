@@ -16,6 +16,6 @@ request(url, function (error, response) {
         completedTasks[tasks[i].userId] = counter;
       }
     }
-    console.log(completedTasks);
+    if (completedTasks) { console.log(completedTasks); }
   }
 });
