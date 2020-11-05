@@ -8,13 +8,11 @@ This is a High Level Foundations repository created to learn the main principies
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-* [Instalation](#Instalation)
-* [Standart Library](#standart-library)
-* [Libraries and Make Files](#installation)
-* [Preprocessor](#preprocessor)
-* [Data Structure and Algorithms](#data-structure-and-algorithms)
-* [Make Files and Libraries](#make-files-and-libraries)
-* [Bit manipulation and File IO](#bit-manipulation-and-file-io)
+* [How to use them](#how-to-use-them)
+* [Python](#python)
+* [SQL MySQL and Data Bases Management with Python](#sql-mysql-and-data-bases-management-with-python)
+* [Python Networking](#python-networking)
+* [Javascript](#Javascript)
 * [Author](#author)
 
 ---
